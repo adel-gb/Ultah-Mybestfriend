@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Birthday Surprise For Zhifaa 🎀</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Pacifico&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- BACKGROUND DECORATION -->
+    <div class="bg-blobs">
+        <span></span><span></span><span></span>
+    </div>
+
+    <!-- ========================= -->
+    <!-- PAGE 1 : OPENING -->
+    <!-- ========================= -->
+    <section class="page active" id="opening">
+        <div class="opening-card">
+            <div class="ribbon">🎀</div>
+            <p class="small-text">pssst... 🎀</p>
+            <h1>
+                A Little<br>
+                Surprise For You
+            </h1>
+            <p class="description">
+                Someone prepared something special for you today ♡
+            </p>
+            <button onclick="openSurprise()">
+                Open it ♡
+            </button>
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- PAGE 2 : ENVELOPE -->
+    <!-- ========================= -->
+    <section class="page" id="envelope">
+        <div class="envelope-container">
+            <p class="small-text">You've got a letter! 💌</p>
+            <div class="envelope" onclick="openLetter()">
+                <div class="envelope-back"></div>
+                <div class="letter-paper">
+                    💌
+                    <span>For you ♡</span>
+                </div>
+                <div class="envelope-body">
+                    <div class="envelope-heart">♡</div>
+                </div>
+                <div class="envelope-top"></div>
+            </div>
+            <p class="hint">Tap the envelope ♡</p>
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- PAGE 3 : BIRTHDAY -->
+    <!-- ========================= -->
+    <section class="page" id="birthday">
+        <div class="birthday-card">
+            <span class="emoji birthday-emoji">🎂</span>
+            <p class="small-text">today is your special day...</p>
+            <h1 id="birthday-title">Happy Birthday! 🎀</h1>
+            <div class="typing-line">
+                <span id="typing-text"></span>
+                <span class="cursor">|</span>
+            </div>
+            <div class="birthday-content" id="birthday-content">
+                <p class="message">
+                    Barakallahu fii umrik 🤍✨
+                    Selamat ulang tahun yaa! Semoga Allah selalu melimpahkan keberkahan
+                    dalam setiap langkahmu, memanjangkan umur dalam kebaikan,
+                    memberikan kesehatan, ketenangan hati, dan memudahkan segala
+                    urusanmu.
+                </p>
+                <p class="message">
+                    Semoga di usia yang baru ini kamu semakin dekat dengan Allah, semakin
+                    banyak hal baik yang datang, dan semua doa serta harapan yang kamu
+                    semogakan satu per satu Allah kabulkan di waktu yang paling tepat. 
+                    <br>Aamiin yaa Rabbal ‘alamin 🤲🏻💗
+                </p>
+                <p class="message">
+                    Semoga selalu jadi perempuan yang kuat, baik, dan tetap rendah hati. 
+                    Happy birthdayy! 🎂🌷
+                </p>
+                <div class="tiny-hearts">♡ 💗 ♡ 💗 ♡</div>
+                <button onclick="nextPage('memories')">There's more... ♡</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- PAGE 4 : MEMORIES -->
+    <!-- ========================= -->
+    <section id="memories" class="page">
+        <div class="memories-container">
+            <span class="emoji">📸</span>
+            <p class="small-text">a little collection of you...</p>
+            <h1>Little Moments ♡</h1>
+            <p class="gallery-intro">
+                Because someone as special as you deserves
+                a little space to shine. 🎀
+            </p>
+            <div class="polaroid-gallery">
+                <div class="polaroid" onclick="openPhoto('assets/photos/photo1.jpg', 'pretty as always ♡')">
+                    <img src="assets/photos/foto1.jpeg" alt="Memory 1">
+                    <p>pretty as always ♡</p>
+                </div>
+                <div class="polaroid" onclick="openPhoto('assets/photos/photo2.jpg', 'just being you 🎀')">
+                    <img src="assets/photos/foto2.jpeg" alt="Memory 2">
+                    <p>just being you 🎀</p>
+                </div>
+                <div class="polaroid" onclick="openPhoto('assets/photos/photo3.jpg', 'this smile tho 💗')">
+                    <img src="assets/photos/foto3.jpeg" alt="Memory 3">
+                    <p>this smile tho 💗</p>
+                </div>
+                <div class="polaroid" onclick="openPhoto('assets/photos/photo4.jpg', 'another cute moment ♡')">
+                    <img src="assets/photos/foto4.jpeg" alt="Memory 4">
+                    <p>another cute moment ♡</p>
+                </div>
+                <div class="polaroid" onclick="openPhoto('assets/photos/photo5.jpg', 'you deserve all the happiness ✨')">
+                    <img src="assets/photos/foto5.jpg" alt="Memory 5">
+                    <p>you deserve all the happiness ✨</p>
+                </div>
+            </div>
+            <button onclick="nextPage('cake')">There's more... 🎂</button>
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- PAGE 5 : CAKE -->
+    <!-- ========================= -->
+    <section id="cake" class="page">
+        <div class="cake-container">
+            <span class="emoji">🎂</span>
+            <p class="small-text">make a wish... ✨</p>
+            <h1>A Little Wish ♡</h1>
+            <p class="cake-intro">
+                Before we continue,
+                there's one little thing you have to do...
+            </p>
+            <div class="cake-area">
+                <div class="candle" onclick="blowCandle()">
+                    <div class="flame" id="flame">🔥</div>
+                    <div class="candle-stick"></div>
+                </div>
+                <div class="cake">
+                    <div class="cake-top"></div>
+                    <div class="cake-body">🎂</div>
+                </div>
+            </div>
+            <p id="wish-text" class="wish-text">
+                Tap the candle to make a wish! 🕯️
+            </p>
+            <button id="cake-next" class="hidden" onclick="nextPage('letter')">
+                Read your letter 💌
+            </button>
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- PAGE 6 : LETTER -->
+    <!-- ========================= -->
+    <section class="page" id="letter">
+        <div class="letter-container">
+            <span class="emoji">💌</span>
+            <p class="small-text">a little letter for you...</p>
+            <div class="letter-card">
+                <div class="letter-decoration">♡ ✦ ♡</div>
+                <h1>For You,</h1>
+                <div class="letter-content">
+                    <p>Happy birthday, <strong id="letter-name"></strong>! 🎀</p>
+                    <p>
+                        Semoga bertambahnya umur membawa
+                        lebih banyak kebahagiaan, ketenangan,
+                        dan hal-hal baik yang kamu tunggu-tunggu. ♡
+                    </p>
+                    <p>
+                        Semoga semua impian yang sedang kamu perjuangkan
+                        perlahan menemukan jalannya.
+                        Jangan lupa untuk selalu menghargai
+                        setiap langkah kecil yang sudah kamu lewati. 🌷
+                    </p>
+                    <p>
+                        You deserve beautiful days,
+                        genuine happiness,
+                        and lots of reasons to smile. 💗
+                    </p>
+                    <p>Keep being the wonderful person that you are. ✨</p>
+                </div>
+                <div class="letter-decoration">🎀 ♡ 🎀</div>
+            </div>
+            <button onclick="nextPage('gift')">One last surprise... 🎁</button>
+        </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- PAGE 7 : GIFT -->
+    <!-- ========================= -->
+    <section class="page" id="gift">
+        <div class="gift-container">
+            <p class="small-text" id="gift-intro">
+                okay... this is really the last one
+            </p>
+            <div class="gift-box" id="gift-box" onclick="openGift()">
+                <div class="gift-lid"></div>
+                <div class="gift-ribbon-v"></div>
+                <div class="gift-ribbon-h"></div>
+                <div class="gift-bow">🎀</div>
+            </div>
+            <p id="gift-hint">Tap the gift ♡</p>
+            <div id="final-message" class="final-message">
+                <h1>Happy Birthday Zhifaa! 🎀</h1>
+                <p>
+                    May this new chapter of your life
+                    be filled with happiness,
+                    beautiful moments,
+                    and everything your heart wishes for. 💗
+                </p>
+                <div class="final-hearts">♡ 💗 ✨ 💗 ♡</div>
+                <span>— Adell ♡</span>
+                <br><br>
+                <button onclick="replayWebsite()">Replay from the beginning ♡</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHOTO POPUP -->
+    <div id="photo-popup" class="photo-popup">
+        <button class="close-popup" onclick="closePhoto()">✕</button>
+        <div class="popup-content">
+            <img id="popup-image" src="" alt="Photo">
+            <p id="popup-caption"></p>
+        </div>
+    </div>
+
+    <!-- ========================= -->
+    <!-- AUDIO ELEMENTS -->
+    <!-- ========================= -->
+    <audio id="bgm" loop preload="auto">
+        <source src="assets/sounds/bgm.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sfx-camera" preload="auto">
+        <source src="assets/sounds/camera.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sfx-pop" preload="auto">
+        <source src="assets/sounds/pop.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sfx-envelope" preload="auto">
+        <source src="assets/sounds/envelope.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sfx-gift" preload="auto">
+        <source src="assets/sounds/gift.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sfx-whoosh" preload="auto">
+        <source src="assets/sounds/whoosh.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sfx-confetti" preload="auto">
+        <source src="assets/sounds/confetti.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- MUSIC TOGGLE BUTTON -->
+    <button id="music-toggle" class="music-toggle" onclick="toggleMusic()" title="Toggle music">
+        <span id="music-icon">🔇</span>
+    </button>
+
+    <!-- ========================= -->
+    <!-- CUTE CAT COMPANION -->
+    <!-- ========================= -->
+    <div id="cat-companion" class="cat-companion" onclick="catSpeakNext()">
+        <div class="cat-bubble" id="cat-bubble">
+            <span id="cat-text">hi kamu! 🐱</span>
+        </div>
+        <div class="cat-emoji" id="cat-emoji">🐱</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
